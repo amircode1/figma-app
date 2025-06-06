@@ -1,15 +1,9 @@
 @import "tailwindcss";
+@import "./fonts.css";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +16,121 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Kufi Arabic', 'Radio Canada', Arial, Helvetica, sans-serif;
+  direction: rtl;
+}
+
+/* Custom gradient utilities */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Font utilities */
+.font-morabba {
+  font-family: 'Noto Kufi Arabic', 'Radio Canada', Arial, Helvetica, sans-serif !important;
+  font-weight: 700;
+}
+
+.font-yekan {
+  font-family: 'Noto Kufi Arabic', 'Radio Canada', Arial, Helvetica, sans-serif !important;
+  font-weight: 400;
+}
+
+.font-condensed {
+  font-family: 'Roboto Condensed', 'Noto Kufi Arabic', Arial, Helvetica, sans-serif !important;
+  font-weight: 600;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom hover effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .font-morabba {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+  
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+}
+
+/* فایل: styles/globals.css یا app/globals.css */
+
+.swiper-pagination {
+  bottom: -20px !important;
+  text-align: center;
+  position: absolute !important;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50; /* مطمئن شو بالای بقیه divها باشه */
+}
+
+.swiper-pagination-bullet {
+  background-color: #666 !important;
+  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #00C16A !important;
+}
+.swiper-button-lock {
+  display: flex !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+/* رنگ طلایی برای آیکون‌ها */
+.icon-gold {
+  filter: invert(77%) sepia(22%) saturate(664%) hue-rotate(359deg) brightness(92%) contrast(88%);
+}
+
+/* رنگ سیاه برای آیکون‌ها هنگام هاور */
+.icon-black {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
 }

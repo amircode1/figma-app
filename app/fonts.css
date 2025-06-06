@@ -1,0 +1,19 @@
+/* Google Fonts Integration */
+/* Using Noto Kufi Arabic for Persian/Arabic text */
+/* Using Radio Canada for Latin text */
+/* Using Roboto Condensed for headings and emphasis */
+
+.font-morabba {
+  font-family: 'Noto Kufi Arabic', 'Radio Canada', Arial, Helvetica, sans-serif !important;
+  font-weight: 700;
+}
+
+.font-yekan {
+  font-family: 'Noto Kufi Arabic', 'Radio Canada', Arial, Helvetica, sans-serif !important;
+  font-weight: 400;
+}
+
+.font-condensed {
+  font-family: 'Roboto Condensed', 'Noto Kufi Arabic', Arial, Helvetica, sans-serif !important;
+  font-weight: 600;
+}

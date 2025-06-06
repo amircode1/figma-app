@@ -1,0 +1,36 @@
+{
+  "services": [
+    { "icon": "/icon/truck2.svg", "text": "ارسال به سراسر ایران" },
+    { "icon": "/icon/clock.svg", "text": "ارسال یک روزه برای تهران" },
+    { "icon": "/icon/card.svg", "text": "پرداخت امن" },
+    { "icon": "/icon/call2.svg", "text": "پشتیبانی ساعت 9:00 تا 22:00" },
+    { "icon": "/icon/gift.svg", "text": "ارسال رایگان سفارشات قهوه بالای 1 کیلو" }
+  ],
+  "products": [
+    { "image": "/store-assets/coffee-bag-1.png", "title": "قهوه ترک اسپشیال بن مانو", "price": "۱۷۵,۰۰۰ تومان" },
+    { "image": "/store-assets/coffee-bag-2.png", "title": "قهوه اسپرسو بیاتیتی", "price": "۱۸۵,۰۰۰ تومان" },
+    { "image": "/store-assets/coffee-bag-3.png", "title": "قهوه فرانسه نسکافه گلد", "price": "۱۶۵,۰۰۰ تومان" },
+    { "image": "/store-assets/coffee-bag-4.png", "title": "قهوه ترک گلد", "price": "۱۹۵,۰۰۰ تومان" },
+    { "image": "/store-assets/coffee-bag-1.png", "title": "دانه قهوه ترکیبی", "price": "۹۸,۰۰۰ تومان" },
+    { "image": "/store-assets/coffee-bag-2.png", "title": "دانه قهوه عربیکا مدیوم", "price": "۱۲۰,۰۰۰ تومان" }
+  ],
+  "machines": [
+    { "image": "/image-M/image1.png", "title": "اسپرسو ساز سیج مدل ECM2024", "price": "۶,۹۰۰,۰۰۰ تومان" },
+    { "image": "/image-M/image2.png", "title": "اسپرسو ساز سیج مدل ECM2024", "price": "۶,۹۰۰,۰۰۰ تومان" },
+    { "image": "/image-M/image3.png", "title": "اسپرسو ساز سیج مدل ECM2024", "price": "۶,۹۰۰,۰۰۰ تومان" },
+    { "image": "/image-M/image4.png", "title": "اسپرسو ساز سیج مدل ECM2024", "price": "۶,۹۰۰,۰۰۰ تومان" },
+    { "image": "/image-M/image3.png", "title": "اسپرسو ساز سیج مدل ECM2024", "price": "۶,۹۰۰,۰۰۰ تومان" },
+    { "image": "/image-M/image4.png", "title": "اسپرسو ساز سیج مدل ECM2024", "price": "۶,۹۰۰,۰۰۰ تومان" }
+  ],
+  "coffeeStuff": [
+    { "image": "/image-P/image1.png", "title": "اسپرسو ساز میباشی مدل ECM2024", "price": "۶,۳۰۰,۰۰۰ تومان" },
+    { "image": "/image-P/image2.png", "title": "اسپرسو ساز میباشی مدل ECM2024", "price": "۶,۳۰۰,۰۰۰ تومان" },
+    { "image": "/image-P/image3.png", "title": "اسپرسو ساز میباشی مدل ECM2024", "price": "۶,۳۰۰,۰۰۰ تومان" },
+    { "image": "/image-P/image4.png", "title": "اسپرسو ساز میباشی مدل ECM2024", "price": "۶,۳۰۰,۰۰۰ تومان" }
+  ],
+  "blogs": [
+    { "image": "/image-B/image1.png", "date": "۱۴۰۱/۰۱/۳۰", "title": "قهوه روبوستا، پرکافئین تلخ", "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و..." },
+    { "image": "/image-B/image2.png", "date": "۱۴۰۱/۰۱/۳۰", "title": "دانه های عربیکا، آدم و دنیای قهوه ها!", "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و..." },
+    { "image": "/image-B/image3.png", "date": "۱۴۰۱/۰۱/۳۰", "title": "قهوه چقدر کالری دارد؟", "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و..." }
+  ]
+}
