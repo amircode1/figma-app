@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import Image from 'next/image';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
@@ -148,14 +149,14 @@ export default function ProductSinglePage() {
             
             {/* Right Side - Product Info */}
             <div className="w-full lg:w-1/2">
-            <section className="bg-[#151515] py-4">
+            <section className="bg-[#151515] py-4">              
               <div className="container">
                 <nav className="text-sm text-gray-400 font-yekan flex items-center">
-                  <a href="/" className="hover:text-[#00C16A] transition-colors">صفحه اصلی</a>
+                  <Link href="/" className="hover:text-[#00C16A] transition-colors">صفحه اصلی</Link>
                   <span className="mx-2">/</span>
-                  <a href="/store" className="hover:text-[#00C16A] transition-colors">انواع قهوه</a>
+                  <Link href="/store" className="hover:text-[#00C16A] transition-colors">انواع قهوه</Link>
                   <span className="mx-2">/</span>
-                  <a href="/store?category=coffee" className="hover:text-[#00C16A] transition-colors">عربیکا</a>
+                  <Link href="/store?category=coffee" className="hover:text-[#00C16A] transition-colors">عربیکا</Link>
                   <span className="mx-2">/</span>
                   <span className="text-white">دانه قهوه عربیکا اتیوپی یرگاچف</span>
                 </nav>

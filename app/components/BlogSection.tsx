@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from 'next/image';
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -21,12 +22,11 @@ export default function BlogSlider() {
     };
     loadBlogs();
   }, []);
-
   useEffect(() => {
     if (prevRef.current && nextRef.current) {
       setRefsReady(true);
     }
-  }, [prevRef.current, nextRef.current]);
+  }, []);
 
   return (
     <section className="py-10 px-4 bg-[#151515] text-white max-w-7xl mx-auto">
@@ -75,10 +75,9 @@ export default function BlogSlider() {
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-[17px] mb-1">{item.title}</h3>
-                  <p className="text-sm text-gray-300 mb-2">{item.description}</p>
-                  <a href="#" className="text-green-500 text-sm font-semibold hover:underline">
+                  <p className="text-sm text-gray-300 mb-2">{item.description}</p>                  <Link href={`/blog/${item.id}`} className="text-green-500 text-sm font-semibold hover:underline">
                     مطالعه بیشتر
-                  </a>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>

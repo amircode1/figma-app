@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -33,12 +34,11 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const [refsReady, setRefsReady] = useState(false);
-
   useEffect(() => {
     if (prevRef.current && nextRef.current) {
       setRefsReady(true);
     }
-  }, [prevRef.current, nextRef.current]);
+  }, []);
 
   return (
     <section className={`bg-[#151515] py-16 static ${className}`}>
@@ -54,10 +54,9 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white font-morabba text-center">
             {title}
-          </h2>
-          <a href={buttonHref} className="text-[#C6A15B] hover:text-white transition-colors font-yekan border border-[#C6A15B] hover:bg-[#C6A15B] px-4 py-2 rounded-lg ml-4 min-w-[120px] text-center">
+          </h2>          <Link href={buttonHref} className="text-[#C6A15B] hover:text-white transition-colors font-yekan border border-[#C6A15B] hover:bg-[#C6A15B] px-4 py-2 rounded-lg ml-4 min-w-[120px] text-center">
             {buttonLabel}
-          </a>
+          </Link>
         </div>
         {refsReady && (
           <Swiper
