@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react';
-import { ChevronUpIcon } from '@heroicons/react/24/outline';
+import { useState, useEffect } from "react";
+import { ChevronUpIcon } from "@heroicons/react/24/outline";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,27 +15,26 @@ const ScrollToTop = () => {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
-
   return (
     <>
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 left-8 bg-[#00C16A] hover:bg-[#00A555] text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 group"
+          className="fixed bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-6 lg:left-8 bg-[#00C16A] hover:bg-[#00A555] active:bg-[#009245] text-white p-2.5 sm:p-3 lg:p-4 rounded-full shadow-lg transition-all duration-300 z-50 group touch-manipulation"
           aria-label="Scroll to top"
         >
-          <ChevronUpIcon className="w-6 h-6 transform group-hover:scale-110 transition-transform" />
+          <ChevronUpIcon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 transform group-hover:scale-110 transition-transform" />
         </button>
       )}
     </>

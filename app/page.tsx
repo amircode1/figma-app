@@ -10,7 +10,12 @@ import Footer from "./components/Footer";
 import ServiceBar from "./components/ServiceBar";
 import ProductSlider from "./components/ProductSlider";
 import BlogSlider from "./components/BlogSection";
-import { getCoffeeProducts, getMachines, getCoffeeStuff, type Product } from "./lib/api";
+import {
+  getCoffeeProducts,
+  getMachines,
+  getCoffeeStuff,
+  type Product,
+} from "./lib/api";
 
 export default function Home() {
   const [coffeeProducts, setCoffeeProducts] = useState<Product[]>([]);
@@ -30,11 +35,12 @@ export default function Home() {
     };
     loadData();
   }, []);
-
   return (
     <main className="bg-[#151515] min-h-screen font-yekan">
       <Header />
-      <HeroSection />
+      <div className="pt-16 sm:pt-20 lg:pt-24">
+        <HeroSection />
+      </div>
       <Category />
       <ProductSlider
         title="پیشنهاد قهوه برای هر ذائقه و سلیقه"
@@ -50,7 +56,7 @@ export default function Home() {
         title="از جوشوندن آب تا نوشیدن قهوه هر چی که لازم داری"
         products={coffeeStuff}
       />
-      <BlogSlider/>
+      <BlogSlider />
       <ServiceBar />
       <Footer />
     </main>

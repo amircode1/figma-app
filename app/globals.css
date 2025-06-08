@@ -16,7 +16,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-noto-kufi-arabic), var(--font-radio-canada), Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-kufi-arabic), var(--font-radio-canada), Arial,
+    Helvetica, sans-serif;
   direction: rtl;
 }
 
@@ -27,17 +28,20 @@ body {
 
 /* Font utilities */
 .font-morabba {
-  font-family: var(--font-noto-kufi-arabic), var(--font-radio-canada), Arial, Helvetica, sans-serif !important;
+  font-family: var(--font-noto-kufi-arabic), var(--font-radio-canada), Arial,
+    Helvetica, sans-serif !important;
   font-weight: 700;
 }
 
 .font-yekan {
-  font-family: var(--font-noto-kufi-arabic), var(--font-radio-canada), Arial, Helvetica, sans-serif !important;
+  font-family: var(--font-noto-kufi-arabic), var(--font-radio-canada), Arial,
+    Helvetica, sans-serif !important;
   font-weight: 400;
 }
 
 .font-condensed {
-  font-family: var(--font-roboto-condensed), var(--font-noto-kufi-arabic), Arial, Helvetica, sans-serif !important;
+  font-family: var(--font-roboto-condensed), var(--font-noto-kufi-arabic), Arial,
+    Helvetica, sans-serif !important;
   font-weight: 600;
 }
 
@@ -61,7 +65,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #00C16A;
+  outline: 2px solid #00c16a;
   outline-offset: 2px;
 }
 
@@ -103,7 +107,8 @@ textarea:focus-visible {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -124,10 +129,80 @@ textarea:focus-visible {
   .font-morabba {
     font-size: clamp(1.5rem, 4vw, 3rem);
   }
-  
+
   .hero-title {
     font-size: clamp(2rem, 8vw, 4rem);
   }
+
+  /* Mobile spacing adjustments */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+}
+
+/* Enhanced responsive utilities */
+.responsive-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Improve touch targets */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize scrolling performance */
+  .scroll-optimized {
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+  }
+}
+
+/* Hardware acceleration for animations */
+.hw-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 /* فایل: styles/globals.css یا app/globals.css */
@@ -152,7 +227,7 @@ textarea:focus-visible {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #00C16A !important;
+  background-color: #00c16a !important;
 }
 .swiper-button-lock {
   display: flex !important;
@@ -162,10 +237,12 @@ textarea:focus-visible {
 
 /* رنگ طلایی برای آیکون‌ها */
 .icon-gold {
-  filter: invert(77%) sepia(22%) saturate(664%) hue-rotate(359deg) brightness(92%) contrast(88%);
+  filter: invert(77%) sepia(22%) saturate(664%) hue-rotate(359deg)
+    brightness(92%) contrast(88%);
 }
 
 /* رنگ سیاه برای آیکون‌ها هنگام هاور */
 .icon-black {
-  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%)
+    contrast(100%);
 }
