@@ -22,9 +22,10 @@ const FilterBar: React.FC<FilterBarProps> = ({ onGrid, onList, activeView }) => 
       <span className="text-xs text-[#888] mr-2">فیلترها</span>
     </div>
     {/* Grid/List toggle and count */}
-    <div className="flex items-center gap-2">
-      <button
-        className={`w-8 h-8 flex items-center justify-center rounded border border-[#232323] bg-[#232323] ${activeView === "grid" ? "text-[#00C16A]" : ""}`}
+    <div className="flex items-center gap-2">      <button
+        className={`w-8 h-8 flex items-center justify-center rounded border border-[#232323] bg-[#232323] transition-colors hover:text-[#00C16A] ${
+          activeView === "grid" ? "text-[#00C16A]" : "text-[#888]"
+        }`}
         onClick={onGrid}
       >
         <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
@@ -42,11 +43,13 @@ const FilterBar: React.FC<FilterBarProps> = ({ onGrid, onList, activeView }) => 
         </svg>
       </button>
       <button
-        className={`w-8 h-8 flex items-center justify-center rounded border border-[#232323] bg-[#232323] ${activeView === "list" ? "text-[#00C16A]" : ""}`}
+        className={`w-8 h-8 flex items-center justify-center rounded border border-[#232323] bg-[#232323] transition-colors hover:text-[#00C16A] ${
+          activeView === "list" ? "text-[#00C16A]" : "text-[#888]"
+        }`}
         onClick={onList}
       >
         <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-          <g fill="#888">
+          <g fill="currentColor">
             <rect x="2" y="4" width="16" height="2" rx="1" />
             <rect x="2" y="9" width="16" height="2" rx="1" />
             <rect x="2" y="14" width="16" height="2" rx="1" />

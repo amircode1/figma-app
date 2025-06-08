@@ -9,9 +9,10 @@ import "swiper/css/pagination";
 import ProductCard from "./ProductCard";
 
 interface Product {
+  id: string;
   image: string;
   title: string;
-  price: string;
+  price: string | number;
 }
 
 interface ProductSliderProps {
@@ -67,24 +68,22 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 4 },
             }}
-            navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-            pagination={{ clickable: true }}
+            navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}            pagination={{ clickable: true }}
             className="pt-2"
             onInit={swiper => {
-              // @ts-ignore
+              // @ts-expect-error - Swiper navigation params type issue
               swiper.params.navigation.prevEl = prevRef.current;
-              // @ts-ignore
+              // @ts-expect-error - Swiper navigation params type issue
               swiper.params.navigation.nextEl = nextRef.current;
               swiper.navigation.init();
               swiper.navigation.update();
             }}
-          >
-            {products.map((product, index) => (
-              <SwiperSlide key={index}>
-                <ProductCard
+          >            {products.map((product, index) => (
+              <SwiperSlide key={index}>                <ProductCard
+                  id={product.id}
                   image={product.image}
                   title={product.title}
-                  price={product.price}
+                  price={typeof product.price === 'number' ? product.price.toString() : product.price}
                 />
               </SwiperSlide>
             ))}

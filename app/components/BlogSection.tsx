@@ -1,20 +1,26 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import dataRaw from '../data.json';
-const data = dataRaw as {
-  blogs: { image: string; date: string; title: string; description: string }[];
-};
-const blogs = data.blogs;
+import { getBlogs, type Blog } from '../lib/api';
 
 export default function BlogSlider() {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const [refsReady, setRefsReady] = useState(false);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    const loadBlogs = async () => {
+      const data = await getBlogs();
+      setBlogs(data);
+    };
+    loadBlogs();
+  }, []);
 
   useEffect(() => {
     if (prevRef.current && nextRef.current) {
@@ -48,23 +54,21 @@ export default function BlogSlider() {
           breakpoints={{
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
-          }}
-          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          }}          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
           className="blog-swiper"
           onInit={swiper => {
-            // @ts-ignore
+            // @ts-expect-error - Swiper navigation params type issue
             swiper.params.navigation.prevEl = prevRef.current;
-            // @ts-ignore
+            // @ts-expect-error - Swiper navigation params type issue
             swiper.params.navigation.nextEl = nextRef.current;
             swiper.navigation.init();
             swiper.navigation.update();
           }}
         >
-          {blogs.map((item: {image: string; date: string; title: string; description: string}, idx: number) => (
-            <SwiperSlide key={idx}>
-              <div className="rounded-2xl overflow-hidden bg-[#151515] shadow-lg">
+          {blogs.map((item) => (
+            <SwiperSlide key={item.id}>              <div className="rounded-2xl overflow-hidden bg-[#151515] shadow-lg">
                 <div className="relative">
-                  <img src={item.image} alt={item.title} className="w-full h-56 object-cover" />
+                  <Image src={item.image} alt={item.title} width={400} height={224} className="w-full h-56 object-cover" />
                   <span className="absolute top-3 left-3 bg-white/10 backdrop-blur-lg border border-white/20 shadow-md hover:bg-white/20 transition-all text-white px-3 py-1 text-xs font-yekan rounded-full">
                     {item.date}
                   </span>
